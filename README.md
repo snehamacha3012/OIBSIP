@@ -33,7 +33,7 @@ Each task folder includes:
 - Screenshots or output files (where applicable)
 
 ## Tech Stack
-HTML, CSS, JavaScript
+HTML, CSS
 
 ## Connect with Me
 - LinkedIn: linkedin.com/in/sneha-macha-7545a5263
