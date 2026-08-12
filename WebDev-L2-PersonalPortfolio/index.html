@@ -9,7 +9,11 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
@@ -17,10 +21,12 @@
 
 <body>
 
-    <!-- Navigation -->
-    <header>
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="header">
         <nav class="navbar">
-            <div class="logo">MS</div>
+
+            <a href="#home" class="logo">MS</a>
 
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -29,113 +35,218 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+
         </nav>
     </header>
 
 
     <main>
 
-        <!-- Hero Section -->
+        <!-- ================= HERO ================= -->
+
         <section id="home" class="hero">
 
             <div class="hero-content">
 
+                <span class="hero-label">WELCOME TO MY PORTFOLIO</span>
+
                 <p class="intro">Hello, I'm</p>
 
-                <h1>MACHA SNEHA</h1>
+                <h1>MACHA <span>SNEHA</span></h1>
 
                 <h2>
-                    B.Tech Computer Science Graduate |
-                    Aspiring Software Developer
+                    B.Tech Computer Science Graduate
+                    <br>
+                    <span>Aspiring Software Developer | AI/ML Enthusiast</span>
                 </h2>
 
-                <p>
-                    Passionate about technology, software development,
-                    artificial intelligence, and building practical solutions.
+                <p class="hero-description">
+                    I enjoy building practical technology solutions and exploring
+                    software development, artificial intelligence, machine learning,
+                    and web technologies.
                 </p>
 
-                <a href="#projects" class="btn">
-                    View My Projects
-                </a>
+                <div class="hero-buttons">
+
+                    <a href="#projects" class="primary-btn">
+                        View My Projects
+                    </a>
+
+                    <a href="#contact" class="secondary-btn">
+                        Contact Me
+                    </a>
+
+                </div>
 
             </div>
 
 
-            <!-- Avatar Placeholder -->
-            <div class="profile-image">
-                <div class="avatar">MS</div>
+            <!-- Profile Image -->
+
+            <div class="profile-container">
+
+                <div class="profile-ring">
+
+                    <img
+                        src="profile.jpg"
+                        alt="Professional profile photo of Macha Sneha"
+                        class="profile-photo"
+                    >
+
+                </div>
+
+                <div class="profile-badge">
+                    B.Tech CSE
+                </div>
+
             </div>
 
         </section>
 
 
-        <!-- About Section -->
+        <!-- ================= ABOUT ================= -->
+
         <section id="about" class="section">
 
-            <h2 class="section-title">About Me</h2>
+            <div class="section-heading">
+                <span>GET TO KNOW ME</span>
+                <h2>About Me</h2>
+            </div>
 
-            <div class="about-content">
+            <div class="about-card">
 
-                <p>
-                    I am a B.Tech Computer Science graduate with a strong interest
-                    in software development, Python, and emerging technologies.
-                    I enjoy building practical projects and exploring AI, machine
-                    learning, and web development to solve real-world problems.
-                </p>
+                <div class="about-icon">
+                    👩‍💻
+                </div>
+
+                <div class="about-text">
+
+                    <p>
+                        I am a B.Tech Computer Science graduate with a strong
+                        interest in software development, Python, and emerging
+                        technologies.
+                    </p>
+
+                    <p>
+                        I enjoy building practical projects and exploring AI,
+                        machine learning, and web development to solve real-world
+                        problems.
+                    </p>
+
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- Skills Section -->
-        <section id="skills" class="section">
+        <!-- ================= SKILLS ================= -->
 
-            <h2 class="section-title">My Skills</h2>
+        <section id="skills" class="section skills-section">
+
+            <div class="section-heading">
+                <span>WHAT I WORK WITH</span>
+                <h2>Technical Skills</h2>
+            </div>
 
             <div class="skills-grid">
 
-                <div class="skill-card">Python</div>
+                <div class="skill-card">
+                    <div class="skill-icon">🐍</div>
+                    <h3>Python</h3>
+                    <p>Programming</p>
+                </div>
 
-                <div class="skill-card">SQL</div>
+                <div class="skill-card">
+                    <div class="skill-icon">🗄️</div>
+                    <h3>SQL</h3>
+                    <p>Database</p>
+                </div>
 
-                <div class="skill-card">HTML5</div>
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h3>HTML5</h3>
+                    <p>Web Development</p>
+                </div>
 
-                <div class="skill-card">CSS3</div>
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>CSS3</h3>
+                    <p>Web Design</p>
+                </div>
 
-                <div class="skill-card">JavaScript</div>
+                <div class="skill-card">
+                    <div class="skill-icon">⚡</div>
+                    <h3>JavaScript</h3>
+                    <p>Web Development</p>
+                </div>
 
-                <div class="skill-card">Pandas</div>
+                <div class="skill-card">
+                    <div class="skill-icon">📊</div>
+                    <h3>Pandas</h3>
+                    <p>Data Analysis</p>
+                </div>
 
-                <div class="skill-card">NumPy</div>
+                <div class="skill-card">
+                    <div class="skill-icon">🔢</div>
+                    <h3>NumPy</h3>
+                    <p>Data Processing</p>
+                </div>
 
-                <div class="skill-card">Scikit-learn</div>
+                <div class="skill-card">
+                    <div class="skill-icon">🤖</div>
+                    <h3>Scikit-learn</h3>
+                    <p>Machine Learning</p>
+                </div>
 
-                <div class="skill-card">Matplotlib</div>
+                <div class="skill-card">
+                    <div class="skill-icon">📈</div>
+                    <h3>Matplotlib</h3>
+                    <p>Visualization</p>
+                </div>
 
-                <div class="skill-card">TensorFlow</div>
+                <div class="skill-card">
+                    <div class="skill-icon">🧠</div>
+                    <h3>TensorFlow</h3>
+                    <p>Deep Learning</p>
+                </div>
 
-                <div class="skill-card">PyTorch</div>
+                <div class="skill-card">
+                    <div class="skill-icon">🔥</div>
+                    <h3>PyTorch</h3>
+                    <p>Deep Learning</p>
+                </div>
 
-                <div class="skill-card">Keras</div>
-
-                <div class="skill-card">OpenCV</div>
+                <div class="skill-card">
+                    <div class="skill-icon">👁️</div>
+                    <h3>OpenCV</h3>
+                    <p>Computer Vision</p>
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- Projects Section -->
+        <!-- ================= PROJECTS ================= -->
+
         <section id="projects" class="section">
 
-            <h2 class="section-title">My Projects</h2>
+            <div class="section-heading">
+                <span>MY RECENT WORK</span>
+                <h2>Featured Projects</h2>
+            </div>
 
             <div class="projects-grid">
 
 
                 <!-- Project 1 -->
+
                 <article class="project-card">
+
+                    <div class="project-number">
+                        01
+                    </div>
 
                     <h3>
                         Cybersecurity Breach Prediction using ML
@@ -143,15 +254,16 @@
 
                     <p>
                         Developed a machine learning model to predict
-                        cybersecurity breaches by analyzing historical
-                        datasets and identifying potential security threats.
+                        cybersecurity breaches by analyzing historical datasets
+                        and identifying potential security threats.
                     </p>
 
-                    <p class="technologies">
-                        Python • Pandas • NumPy • Scikit-learn • Matplotlib
-                    </p>
+                    <div class="technology-list">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Scikit-learn</span>
+                    </div>
 
-                    <!-- GitHub Link Placeholder -->
                     <a href="#" class="project-link">
                         GitHub Link →
                     </a>
@@ -160,23 +272,29 @@
 
 
                 <!-- Project 2 -->
+
                 <article class="project-card">
+
+                    <div class="project-number">
+                        02
+                    </div>
 
                     <h3>
                         Forest Fire Image Detection using CNN
                     </h3>
 
                     <p>
-                        Designed a CNN-based image classification system
-                        to identify forest fire images and support faster
-                        automated fire detection.
+                        Designed a CNN-based image classification system to
+                        identify forest fire images and support faster automated
+                        fire detection.
                     </p>
 
-                    <p class="technologies">
-                        Python • TensorFlow • PyTorch • OpenCV
-                    </p>
+                    <div class="technology-list">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>OpenCV</span>
+                    </div>
 
-                    <!-- GitHub Link Placeholder -->
                     <a href="#" class="project-link">
                         GitHub Link →
                     </a>
@@ -185,23 +303,29 @@
 
 
                 <!-- Project 3 -->
+
                 <article class="project-card">
+
+                    <div class="project-number">
+                        03
+                    </div>
 
                     <h3>
                         Arabic Sign Alphabet Recognition
                     </h3>
 
                     <p>
-                        Developed a deep learning system using MobileNet
-                        to recognize Arabic sign language hand gestures
-                        and convert them into readable output.
+                        Developed a deep learning system using MobileNet to
+                        recognize Arabic sign language hand gestures and convert
+                        them into readable output.
                     </p>
 
-                    <p class="technologies">
-                        Python • TensorFlow • Keras • OpenCV
-                    </p>
+                    <div class="technology-list">
+                        <span>TensorFlow</span>
+                        <span>Keras</span>
+                        <span>OpenCV</span>
+                    </div>
 
-                    <!-- GitHub Link Placeholder -->
                     <a href="#" class="project-link">
                         GitHub Link →
                     </a>
@@ -213,55 +337,65 @@
         </section>
 
 
-        <!-- Contact Section -->
+        <!-- ================= CONTACT ================= -->
+
         <section id="contact" class="section contact-section">
 
-            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-card">
 
-            <p>
-                I'm open to learning opportunities, collaborations,
-                and entry-level roles in technology.
-            </p>
+                <div class="section-heading">
+                    <span>LET'S CONNECT</span>
+                    <h2>Get In Touch</h2>
+                </div>
 
-
-            <div class="contact-info">
-
-                <!-- Email -->
-                <p>
-                    <strong>Email:</strong>
-
-                    <a href="mailto:snehamacha30@gmail.com">
-                        snehamacha30@gmail.com
-                    </a>
+                <p class="contact-description">
+                    I'm open to learning opportunities, collaborations,
+                    and entry-level roles in technology.
                 </p>
 
 
-                <!-- LinkedIn -->
-                <p>
-                    <strong>LinkedIn:</strong>
+                <div class="contact-links">
+
+                    <a
+                        href="mailto:snehamacha30@gmail.com"
+                        class="contact-item"
+                    >
+                        <span class="contact-icon">✉️</span>
+                        <div>
+                            <small>Email</small>
+                            <strong>snehamacha30@gmail.com</strong>
+                        </div>
+                    </a>
+
 
                     <a
                         href="https://www.linkedin.com/in/sneha-macha-7545a5263"
                         target="_blank"
                         rel="noopener noreferrer"
+                        class="contact-item"
                     >
-                        LinkedIn Profile
+                        <span class="contact-icon">in</span>
+                        <div>
+                            <small>LinkedIn</small>
+                            <strong>Connect with me</strong>
+                        </div>
                     </a>
-                </p>
 
-
-                <!-- GitHub -->
-                <p>
-                    <strong>GitHub:</strong>
 
                     <a
                         href="https://github.com/snehamacha3012"
                         target="_blank"
                         rel="noopener noreferrer"
+                        class="contact-item"
                     >
-                        GitHub Profile
+                        <span class="contact-icon">GH</span>
+                        <div>
+                            <small>GitHub</small>
+                            <strong>View my profile</strong>
+                        </div>
                     </a>
-                </p>
+
+                </div>
 
             </div>
 
@@ -270,11 +404,16 @@
     </main>
 
 
-    <!-- Footer -->
+    <!-- ================= FOOTER ================= -->
+
     <footer>
 
         <p>
             © 2026 Macha Sneha. All Rights Reserved.
+        </p>
+
+        <p class="footer-note">
+            Built with HTML5 & CSS3
         </p>
 
     </footer>
