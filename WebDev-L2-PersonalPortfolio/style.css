@@ -15,9 +15,36 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #f7f9fc;
     color: #172033;
     line-height: 1.6;
+
+    /* Moving background */
+    background: linear-gradient(
+        -45deg,
+        #eef4ff,
+        #f5efff,
+        #eafcff,
+        #f7f9fc
+    );
+
+    background-size: 400% 400%;
+
+    animation: movingBackground 14s ease infinite;
+}
+
+@keyframes movingBackground {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 a {
@@ -38,18 +65,25 @@ img {
     position: sticky;
     top: 0;
     z-index: 1000;
+
     background: rgba(15, 23, 42, 0.96);
+
     backdrop-filter: blur(10px);
 }
 
 .navbar {
     max-width: 1150px;
+
     margin: auto;
+
     min-height: 75px;
+
     padding: 12px 25px;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 }
 
@@ -58,6 +92,7 @@ img {
     height: 45px;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
@@ -80,20 +115,23 @@ img {
     list-style: none;
 
     display: flex;
+
     align-items: center;
-    gap: 32px;
+
+    gap: 28px;
 }
 
 .nav-links a {
     color: #e2e8f0;
-    font-size: 14px;
+
+    font-size: 13px;
     font-weight: 500;
 
     transition: 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #7ea2ff;
+    color: #8ba7ff;
 }
 
 
@@ -103,13 +141,17 @@ img {
 
 .hero {
     max-width: 1150px;
+
     min-height: calc(100vh - 75px);
 
     margin: auto;
+
     padding: 80px 25px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 70px;
@@ -123,21 +165,27 @@ img {
     display: inline-block;
 
     margin-bottom: 18px;
+
     padding: 7px 14px;
 
     border-radius: 30px;
 
     background: #e9efff;
+
     color: #4168d5;
 
     font-size: 11px;
+
     font-weight: 600;
+
     letter-spacing: 1.2px;
 }
 
 .intro {
     color: #4f7cff;
+
     font-size: 18px;
+
     font-weight: 600;
 
     margin-bottom: 5px;
@@ -147,6 +195,7 @@ img {
     color: #111827;
 
     font-size: clamp(45px, 7vw, 72px);
+
     line-height: 1.05;
 
     margin-bottom: 18px;
@@ -162,6 +211,7 @@ img {
     color: #334155;
 
     font-size: 23px;
+
     line-height: 1.5;
 
     font-weight: 500;
@@ -171,6 +221,7 @@ img {
 
 .hero h2 span {
     color: #4f7cff;
+
     font-size: 19px;
 }
 
@@ -178,6 +229,7 @@ img {
     max-width: 600px;
 
     color: #64748b;
+
     font-size: 16px;
 
     margin-bottom: 30px;
@@ -185,7 +237,9 @@ img {
 
 .hero-buttons {
     display: flex;
+
     gap: 15px;
+
     flex-wrap: wrap;
 }
 
@@ -196,6 +250,7 @@ img {
     border-radius: 8px;
 
     font-size: 14px;
+
     font-weight: 600;
 
     transition: 0.3s ease;
@@ -203,6 +258,7 @@ img {
 
 .primary-btn {
     background: #4f7cff;
+
     color: white;
 
     box-shadow: 0 8px 20px rgba(79, 124, 255, 0.22);
@@ -210,18 +266,23 @@ img {
 
 .primary-btn:hover {
     background: #3c63d4;
+
     transform: translateY(-3px);
 }
 
 .secondary-btn {
     border: 1px solid #cbd5e1;
+
     color: #334155;
+
     background: white;
 }
 
 .secondary-btn:hover {
     border-color: #4f7cff;
+
     color: #4f7cff;
+
     transform: translateY(-3px);
 }
 
@@ -236,7 +297,9 @@ img {
     flex-shrink: 0;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 }
 
@@ -269,25 +332,6 @@ img {
     border: 6px solid white;
 }
 
-.profile-badge {
-    position: absolute;
-
-    bottom: 15px;
-    left: -15px;
-
-    padding: 9px 16px;
-
-    background: #111827;
-    color: white;
-
-    border-radius: 8px;
-
-    font-size: 12px;
-    font-weight: 600;
-
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
-}
-
 
 /* =========================================
    SECTIONS
@@ -297,11 +341,13 @@ img {
     max-width: 1150px;
 
     margin: auto;
+
     padding: 95px 25px;
 }
 
 .section-heading {
     text-align: center;
+
     margin-bottom: 50px;
 }
 
@@ -309,6 +355,7 @@ img {
     color: #4f7cff;
 
     font-size: 11px;
+
     font-weight: 700;
 
     letter-spacing: 2px;
@@ -318,6 +365,7 @@ img {
     color: #111827;
 
     font-size: 36px;
+
     margin-top: 8px;
 }
 
@@ -330,18 +378,23 @@ img {
     max-width: 850px;
 
     margin: auto;
+
     padding: 35px;
 
     display: flex;
+
     align-items: center;
+
     gap: 30px;
 
-    background: white;
+    background: rgba(255, 255, 255, 0.88);
 
     border: 1px solid #e2e8f0;
+
     border-radius: 16px;
 
-    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.05);
+    box-shadow:
+        0 12px 35px rgba(15, 23, 42, 0.05);
 }
 
 .about-icon {
@@ -351,7 +404,9 @@ img {
     flex-shrink: 0;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     background: #edf2ff;
@@ -363,6 +418,7 @@ img {
 
 .about-text p {
     color: #64748b;
+
     font-size: 15px;
 
     margin-bottom: 10px;
@@ -378,7 +434,9 @@ img {
 ========================================= */
 
 .skills-section {
-    background: #f1f5f9;
+    background: rgba(241, 245, 249, 0.75);
+
+    border-radius: 25px;
 }
 
 .skills-grid {
@@ -387,6 +445,7 @@ img {
     margin: auto;
 
     display: grid;
+
     grid-template-columns: repeat(4, 1fr);
 
     gap: 18px;
@@ -397,9 +456,10 @@ img {
 
     text-align: center;
 
-    background: white;
+    background: rgba(255, 255, 255, 0.92);
 
     border: 1px solid #e2e8f0;
+
     border-radius: 13px;
 
     transition: 0.3s ease;
@@ -416,6 +476,7 @@ img {
 
 .skill-icon {
     font-size: 28px;
+
     margin-bottom: 10px;
 }
 
@@ -423,11 +484,13 @@ img {
     color: #1e293b;
 
     font-size: 16px;
+
     margin-bottom: 3px;
 }
 
 .skill-card p {
     color: #94a3b8;
+
     font-size: 11px;
 }
 
@@ -449,9 +512,10 @@ img {
 
     padding: 30px;
 
-    background: white;
+    background: rgba(255, 255, 255, 0.92);
 
     border: 1px solid #e2e8f0;
+
     border-radius: 15px;
 
     transition: 0.3s ease;
@@ -470,6 +534,7 @@ img {
     color: #dbe4ff;
 
     font-size: 38px;
+
     font-weight: 700;
 
     margin-bottom: 8px;
@@ -479,6 +544,7 @@ img {
     color: #172033;
 
     font-size: 19px;
+
     line-height: 1.4;
 
     margin-bottom: 15px;
@@ -494,7 +560,9 @@ img {
 
 .technology-list {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 7px;
 
     margin-bottom: 22px;
@@ -506,9 +574,11 @@ img {
     border-radius: 5px;
 
     background: #edf2ff;
+
     color: #4168d5;
 
     font-size: 10px;
+
     font-weight: 600;
 }
 
@@ -516,12 +586,147 @@ img {
     color: #4168d5;
 
     font-size: 13px;
+
     font-weight: 600;
 
     transition: 0.3s ease;
 }
 
 .project-link:hover {
+    color: #1d4ed8;
+}
+
+
+/* =========================================
+   CERTIFICATIONS
+========================================= */
+
+.certifications-section {
+    position: relative;
+}
+
+.certifications-grid {
+    max-width: 850px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+}
+
+.certification-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 35px rgba(15, 23, 42, 0.07);
+
+    transition: 0.3s ease;
+}
+
+.certification-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #9db3ff;
+
+    box-shadow:
+        0 20px 40px rgba(15, 23, 42, 0.1);
+}
+
+.certificate-badge {
+    width: 85px;
+    height: 85px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 18px;
+
+    background: #f1f5ff;
+
+    font-size: 42px;
+}
+
+.certificate-content {
+    flex: 1;
+}
+
+.certificate-issuer {
+    color: #4f7cff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.certificate-content h3 {
+    color: #172033;
+
+    font-size: 21px;
+
+    margin: 6px 0;
+}
+
+.certificate-content p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+.certificate-details {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+.certificate-details span {
+    padding: 5px 10px;
+
+    border-radius: 5px;
+
+    background: #edf2ff;
+
+    color: #4168d5;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+.certificate-link {
+    color: #4168d5;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.certificate-link:hover {
     color: #1d4ed8;
 }
 
@@ -538,6 +743,7 @@ img {
     max-width: 900px;
 
     margin: auto;
+
     padding: 55px 40px;
 
     text-align: center;
@@ -584,6 +790,7 @@ img {
     padding: 14px 18px;
 
     display: flex;
+
     align-items: center;
 
     gap: 12px;
@@ -610,7 +817,9 @@ img {
     height: 38px;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     background: #4f7cff;
@@ -620,6 +829,7 @@ img {
     border-radius: 8px;
 
     font-size: 12px;
+
     font-weight: 700;
 }
 
@@ -656,6 +866,7 @@ footer {
 
 .footer-note {
     margin-top: 3px;
+
     color: #64748b;
 }
 
@@ -680,6 +891,7 @@ footer {
 
     .hero-description {
         margin-left: auto;
+
         margin-right: auto;
     }
 
@@ -695,14 +907,6 @@ footer {
         grid-template-columns: 1fr 1fr;
     }
 
-    .project-card:last-child {
-        grid-column: 1 / -1;
-
-        max-width: 500px;
-        width: 100%;
-
-        margin: auto;
-    }
 }
 
 
@@ -723,7 +927,7 @@ footer {
     }
 
     .nav-links {
-        gap: 16px;
+        gap: 13px;
 
         flex-wrap: wrap;
 
@@ -731,7 +935,7 @@ footer {
     }
 
     .nav-links a {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .hero {
@@ -744,18 +948,13 @@ footer {
 
     .profile-ring {
         width: 230px;
+
         height: 230px;
-    }
-
-    .profile-badge {
-        left: -8px;
-        bottom: 5px;
-
-        font-size: 10px;
     }
 
     .hero h1 {
         font-size: 42px;
+
         letter-spacing: -1px;
     }
 
@@ -805,10 +1004,16 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .project-card:last-child {
-        grid-column: auto;
+    .certification-card {
+        flex-direction: column;
 
-        max-width: none;
+        text-align: center;
+
+        padding: 25px 20px;
+    }
+
+    .certificate-details {
+        justify-content: center;
     }
 
     .contact-card {
@@ -821,6 +1026,7 @@ footer {
 
     .contact-item {
         width: 100%;
+
         min-width: 0;
     }
 }
