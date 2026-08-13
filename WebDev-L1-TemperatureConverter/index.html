@@ -4,107 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Temperature Converter | Macha Sneha</title>
+    <title>Temperature Converter</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <main class="app">
+    <main class="app-container">
 
-        <!-- Header -->
-        <header class="header">
-            <p class="mini-title">SMART TEMPERATURE TOOL</p>
+        <!-- HEADER -->
+        <header class="main-header">
             <h1>✦ Temperature Converter ✦</h1>
             <p>Convert Celsius, Fahrenheit & Kelvin Instantly</p>
         </header>
 
-        <div class="dashboard">
 
-            <!-- Quick Reference -->
-            <aside class="quick-reference">
+        <section class="dashboard">
+
+            <!-- LEFT SIDE : QUICK REFERENCE -->
+            <aside class="reference-panel">
+
                 <h2>QUICK REFERENCE</h2>
+                <div class="heading-line"></div>
 
-                <div class="reference-card boiling">
+
+                <div class="reference-card hot">
                     <div class="reference-icon">♨</div>
-                    <div>
+
+                    <div class="reference-text">
                         <h3>Boiling Point of Water</h3>
-                        <p>212°F · 373.15 K</p>
+                        <p>Water (At 1 atm)</p>
                     </div>
-                    <strong>100°C</strong>
+
+                    <div class="reference-value">
+                        <strong>100 °C</strong>
+                        <span>212 °F</span>
+                        <span>373.15 K</span>
+                    </div>
                 </div>
 
-                <div class="reference-card body-temp">
-                    <div class="reference-icon">♟</div>
-                    <div>
+
+                <div class="reference-card body">
+                    <div class="reference-icon">♙</div>
+
+                    <div class="reference-text">
                         <h3>Human Body Temperature</h3>
-                        <p>98.6°F · 310.15 K</p>
                     </div>
-                    <strong>37°C</strong>
+
+                    <div class="reference-value">
+                        <strong>37 °C</strong>
+                        <span>98.6 °F</span>
+                        <span>310.15 K</span>
+                    </div>
                 </div>
 
-                <div class="reference-card room-temp">
+
+                <div class="reference-card room">
                     <div class="reference-icon">⌂</div>
-                    <div>
+
+                    <div class="reference-text">
                         <h3>Room Temperature</h3>
-                        <p>69.8°F · 294.15 K</p>
                     </div>
-                    <strong>21°C</strong>
+
+                    <div class="reference-value">
+                        <strong>21 °C</strong>
+                        <span>69.8 °F</span>
+                        <span>294.15 K</span>
+                    </div>
                 </div>
 
-                <div class="reference-card freezing">
+
+                <div class="reference-card cold">
                     <div class="reference-icon">❄</div>
-                    <div>
+
+                    <div class="reference-text">
                         <h3>Freezing Point of Water</h3>
-                        <p>32°F · 273.15 K</p>
                     </div>
-                    <strong>0°C</strong>
+
+                    <div class="reference-value">
+                        <strong>0 °C</strong>
+                        <span>32 °F</span>
+                        <span>273.15 K</span>
+                    </div>
                 </div>
 
-                <div class="reference-card absolute">
+
+                <div class="reference-card zero">
                     <div class="reference-icon">Ø</div>
-                    <div>
+
+                    <div class="reference-text">
                         <h3>Absolute Zero</h3>
-                        <p>-459.67°F · 0 K</p>
                     </div>
-                    <strong>-273.15°C</strong>
+
+                    <div class="reference-value">
+                        <strong>-273.15 °C</strong>
+                        <span>-459.67 °F</span>
+                        <span>0 K</span>
+                    </div>
                 </div>
 
-                <div class="quote-box">
-                    <span>“</span>
-                    <p>Temperature is a measure of energy and motion.</p>
+
+                <div class="quote-card">
+                    <span class="quote-mark">“</span>
+                    <p>Temperature is the measure of energy that makes molecules move.</p>
+                    <div class="heading-line"></div>
                 </div>
+
             </aside>
 
-            <!-- Converter -->
+
+            <!-- CENTER : CONVERTER -->
             <section class="converter-panel">
 
-                <div class="thermo-hero">
-                    <div class="hero-ring">
-                        <div class="hero-thermometer">
-                            <div class="hero-mercury"></div>
-                            <div class="hero-bulb"></div>
+                <div class="thermometer-logo">
+                    <div class="glow-ring">
+                        <div class="small-thermometer">
+                            <div class="small-mercury"></div>
+                            <div class="small-bulb"></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="input-group">
+
+                <div class="input-section">
                     <label for="temperature">Enter Temperature</label>
 
-                    <div class="input-wrapper">
+                    <div class="temperature-input">
                         <input
                             type="text"
                             id="temperature"
-                            placeholder="Enter value"
+                            placeholder="25"
                         >
                         <span id="input-symbol">°C</span>
                     </div>
 
-                    <p id="error-message" class="error-message"></p>
+                    <p id="error-message"></p>
                 </div>
 
-                <div class="input-group">
+
+                <div class="input-section">
                     <label for="unit">Select Input Unit</label>
 
                     <select id="unit">
@@ -114,123 +153,229 @@
                     </select>
                 </div>
 
+
                 <button id="convert-btn">
                     <span>CONVERT</span>
-                    <span class="arrow">→</span>
+                    <span class="button-arrow">→</span>
                 </button>
 
-                <div class="info-note">
-                    💡 All conversions are calculated instantly with validation.
+
+                <div class="atmosphere-note">
+                    <span>💡</span>
+                    <p>All conversions are calculated instantly with accurate formulas.</p>
                 </div>
 
             </section>
 
-            <!-- Results -->
-            <section class="temperature-results">
 
-                <!-- Celsius -->
-                <div class="temperature-column celsius-column">
+            <!-- RIGHT SIDE : TEMPERATURE RESULTS -->
+            <section class="results-panel">
 
-                    <div class="unit-heading">
+
+                <!-- CELSIUS -->
+                <div class="unit-card celsius-card">
+
+                    <div class="unit-title">
                         <h2>°C</h2>
                         <p>CELSIUS</p>
                     </div>
 
-                    <div class="thermometer-area">
-                        <div class="scale">
+                    <div class="thermo-content">
+
+                        <div class="temperature-scale">
                             <span>100</span>
-                            <span>50</span>
+                            <span>37</span>
+                            <span>21</span>
                             <span>0</span>
-                            <span>-100</span>
                             <span>-273.15</span>
                         </div>
 
-                        <div class="thermometer celsius-thermometer">
-                            <div class="mercury" id="celsius-mercury"></div>
-                            <div class="bulb"></div>
+                        <div class="thermometer red-thermometer">
+                            <div class="tube">
+                                <div class="liquid" id="celsius-liquid"></div>
+                            </div>
+                            <div class="thermo-bulb"></div>
                         </div>
+
                     </div>
 
-                    <div class="value-card">
+                    <div class="result-box">
                         <strong id="celsius-result">--</strong>
                         <span>°C</span>
                     </div>
 
                 </div>
 
-                <!-- Fahrenheit -->
-                <div class="temperature-column fahrenheit-column">
 
-                    <div class="unit-heading">
+                <!-- FAHRENHEIT -->
+                <div class="unit-card fahrenheit-card">
+
+                    <div class="unit-title">
                         <h2>°F</h2>
                         <p>FAHRENHEIT</p>
                     </div>
 
-                    <div class="thermometer-area">
-                        <div class="scale">
+                    <div class="thermo-content">
+
+                        <div class="temperature-scale">
                             <span>212</span>
                             <span>98.6</span>
+                            <span>69.8</span>
                             <span>32</span>
-                            <span>-148</span>
                             <span>-459.67</span>
                         </div>
 
-                        <div class="thermometer fahrenheit-thermometer">
-                            <div class="mercury" id="fahrenheit-mercury"></div>
-                            <div class="bulb"></div>
+                        <div class="thermometer blue-thermometer">
+                            <div class="tube">
+                                <div class="liquid" id="fahrenheit-liquid"></div>
+                            </div>
+                            <div class="thermo-bulb"></div>
                         </div>
+
                     </div>
 
-                    <div class="value-card">
+                    <div class="result-box">
                         <strong id="fahrenheit-result">--</strong>
                         <span>°F</span>
                     </div>
 
                 </div>
 
-                <!-- Kelvin -->
-                <div class="temperature-column kelvin-column">
 
-                    <div class="unit-heading">
+                <!-- KELVIN -->
+                <div class="unit-card kelvin-card">
+
+                    <div class="unit-title">
                         <h2>K</h2>
                         <p>KELVIN</p>
                     </div>
 
-                    <div class="thermometer-area">
-                        <div class="scale">
+                    <div class="thermo-content">
+
+                        <div class="temperature-scale">
                             <span>373.15</span>
                             <span>310.15</span>
+                            <span>294.15</span>
                             <span>273.15</span>
-                            <span>173.15</span>
                             <span>0</span>
                         </div>
 
-                        <div class="thermometer kelvin-thermometer">
-                            <div class="mercury" id="kelvin-mercury"></div>
-                            <div class="bulb"></div>
+                        <div class="thermometer yellow-thermometer">
+                            <div class="tube">
+                                <div class="liquid" id="kelvin-liquid"></div>
+                            </div>
+                            <div class="thermo-bulb"></div>
                         </div>
+
                     </div>
 
-                    <div class="value-card">
+                    <div class="result-box">
                         <strong id="kelvin-result">--</strong>
                         <span>K</span>
                     </div>
 
                 </div>
 
+
+                <!-- RANKINE : VISUAL EXTRA -->
+                <div class="unit-card rankine-card">
+
+                    <div class="unit-title">
+                        <h2>°Ra</h2>
+                        <p>RANKINE</p>
+                    </div>
+
+                    <div class="thermo-content">
+
+                        <div class="temperature-scale">
+                            <span>671.67</span>
+                            <span>558.27</span>
+                            <span>529.47</span>
+                            <span>491.67</span>
+                            <span>0</span>
+                        </div>
+
+                        <div class="thermometer green-thermometer">
+                            <div class="tube">
+                                <div class="liquid" id="rankine-liquid"></div>
+                            </div>
+                            <div class="thermo-bulb"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="result-box">
+                        <strong id="rankine-result">--</strong>
+                        <span>°Ra</span>
+                    </div>
+
+                </div>
+
+
+                <!-- REAUMUR : VISUAL EXTRA -->
+                <div class="unit-card reaumur-card">
+
+                    <div class="unit-title">
+                        <h2>°Re</h2>
+                        <p>RÉAUMUR</p>
+                    </div>
+
+                    <div class="thermo-content">
+
+                        <div class="temperature-scale">
+                            <span>80</span>
+                            <span>29.6</span>
+                            <span>16.8</span>
+                            <span>0</span>
+                            <span>-218.52</span>
+                        </div>
+
+                        <div class="thermometer purple-thermometer">
+                            <div class="tube">
+                                <div class="liquid" id="reaumur-liquid"></div>
+                            </div>
+                            <div class="thermo-bulb"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="result-box">
+                        <strong id="reaumur-result">--</strong>
+                        <span>°Re</span>
+                    </div>
+
+                </div>
+
             </section>
 
-        </div>
+        </section>
 
-        <!-- Formulas -->
+
+        <!-- FORMULAS -->
         <section class="formula-bar">
-            <div class="formula-title">⚛ Conversion Formulas</div>
+
+            <div class="formula-heading">
+                ⚛ <span>Conversion Formulas</span>
+            </div>
+
             <div>°F = (°C × 9/5) + 32</div>
+
+            <div class="formula-divider"></div>
+
             <div>K = °C + 273.15</div>
-            <div>°C = (°F − 32) × 5/9</div>
+
+            <div class="formula-divider"></div>
+
+            <div>°Ra = °F + 459.67</div>
+
+            <div class="formula-divider"></div>
+
+            <div>°Re = °C × 4/5</div>
+
         </section>
 
     </main>
+
 
     <script src="script.js"></script>
 
