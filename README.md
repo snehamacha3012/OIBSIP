@@ -25,7 +25,7 @@ Example:
 OIBSIP/
 ├── WebDev-L1-LandingPage/
 ├── WebDev-L1-PortfolioWebsite/
-└── WebDev-L1-ToDoListApp/
+└── WebDev-L1-TemperatureConverter/
 ```
 Each task folder includes:
 - Source code
