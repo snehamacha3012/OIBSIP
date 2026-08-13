@@ -1,151 +1,190 @@
 const temperatureInput = document.getElementById("temperature");
 const unitSelect = document.getElementById("unit");
 const convertButton = document.getElementById("convert-btn");
-const errorMessage = document.getElementById("error-message");
 const inputSymbol = document.getElementById("input-symbol");
+const errorMessage = document.getElementById("error-message");
 
 const celsiusResult = document.getElementById("celsius-result");
 const fahrenheitResult = document.getElementById("fahrenheit-result");
 const kelvinResult = document.getElementById("kelvin-result");
+const rankineResult = document.getElementById("rankine-result");
+const reaumurResult = document.getElementById("reaumur-result");
 
-const celsiusMercury = document.getElementById("celsius-mercury");
-const fahrenheitMercury = document.getElementById("fahrenheit-mercury");
-const kelvinMercury = document.getElementById("kelvin-mercury");
+const celsiusLiquid = document.getElementById("celsius-liquid");
+const fahrenheitLiquid = document.getElementById("fahrenheit-liquid");
+const kelvinLiquid = document.getElementById("kelvin-liquid");
+const rankineLiquid = document.getElementById("rankine-liquid");
+const reaumurLiquid = document.getElementById("reaumur-liquid");
 
 
-unitSelect.addEventListener("change", updateInputSymbol);
+/* CHANGE INPUT SYMBOL */
 
-function updateInputSymbol() {
+unitSelect.addEventListener("change", function () {
+
     if (unitSelect.value === "celsius") {
         inputSymbol.textContent = "°C";
-    } else if (unitSelect.value === "fahrenheit") {
+    }
+
+    else if (unitSelect.value === "fahrenheit") {
         inputSymbol.textContent = "°F";
-    } else {
+    }
+
+    else {
         inputSymbol.textContent = "K";
     }
-}
 
+});
+
+
+/* CONVERT BUTTON */
 
 convertButton.addEventListener("click", convertTemperature);
 
 
+/* ENTER KEY */
+
+temperatureInput.addEventListener("keydown", function (event) {
+
+    if (event.key === "Enter") {
+        convertTemperature();
+    }
+
+});
+
+
 function convertTemperature() {
+
     const inputValue = temperatureInput.value.trim();
     const selectedUnit = unitSelect.value;
 
-    clearError();
+    errorMessage.textContent = "";
+
+
+    /* EMPTY VALIDATION */
 
     if (inputValue === "") {
         showError("Please enter a temperature value.");
-        resetResults();
         return;
     }
+
+
+    /* NUMERIC VALIDATION */
 
     const temperature = Number(inputValue);
 
     if (!Number.isFinite(temperature)) {
-        showError("Please enter a valid numeric temperature.");
-        resetResults();
+        showError("Please enter a valid numeric value.");
         return;
     }
 
+
     let celsius;
 
+
+    /* CELSIUS INPUT */
+
     if (selectedUnit === "celsius") {
+
         if (temperature < -273.15) {
             showError("Temperature cannot be below absolute zero (-273.15°C).");
-            resetResults();
             return;
         }
 
         celsius = temperature;
     }
 
+
+    /* FAHRENHEIT INPUT */
+
     else if (selectedUnit === "fahrenheit") {
+
         if (temperature < -459.67) {
             showError("Temperature cannot be below absolute zero (-459.67°F).");
-            resetResults();
             return;
         }
 
         celsius = (temperature - 32) * 5 / 9;
     }
 
+
+    /* KELVIN INPUT */
+
     else {
+
         if (temperature < 0) {
             showError("Temperature cannot be below absolute zero (0 K).");
-            resetResults();
             return;
         }
 
         celsius = temperature - 273.15;
     }
 
+
+    /* ALL CONVERSIONS */
+
     const fahrenheit = (celsius * 9 / 5) + 32;
     const kelvin = celsius + 273.15;
 
-    displayResults(celsius, fahrenheit, kelvin);
-}
+    const rankine = fahrenheit + 459.67;
+    const reaumur = celsius * 4 / 5;
 
 
-function displayResults(celsius, fahrenheit, kelvin) {
+    /* DISPLAY RESULTS */
+
     celsiusResult.textContent = celsius.toFixed(2);
     fahrenheitResult.textContent = fahrenheit.toFixed(2);
     kelvinResult.textContent = kelvin.toFixed(2);
+    rankineResult.textContent = rankine.toFixed(2);
+    reaumurResult.textContent = reaumur.toFixed(2);
 
-    animateThermometers(celsius, fahrenheit, kelvin);
+
+    /* ANIMATE THERMOMETERS */
+
+    celsiusLiquid.style.height =
+        getPercentage(celsius, -273.15, 100) + "%";
+
+    fahrenheitLiquid.style.height =
+        getPercentage(fahrenheit, -459.67, 212) + "%";
+
+    kelvinLiquid.style.height =
+        getPercentage(kelvin, 0, 373.15) + "%";
+
+    rankineLiquid.style.height =
+        getPercentage(rankine, 0, 671.67) + "%";
+
+    reaumurLiquid.style.height =
+        getPercentage(reaumur, -218.52, 80) + "%";
 }
 
 
-function animateThermometers(celsius, fahrenheit, kelvin) {
-    const celsiusPercent = getPercentage(celsius, -273.15, 100);
-    const fahrenheitPercent = getPercentage(fahrenheit, -459.67, 212);
-    const kelvinPercent = getPercentage(kelvin, 0, 373.15);
-
-    celsiusMercury.style.height = `${celsiusPercent}%`;
-    fahrenheitMercury.style.height = `${fahrenheitPercent}%`;
-    kelvinMercury.style.height = `${kelvinPercent}%`;
-}
-
-
-function getPercentage(value, minimum, maximum) {
-    let percentage = ((value - minimum) / (maximum - minimum)) * 100;
-
-    if (percentage < 3) {
-        percentage = 3;
-    }
-
-    if (percentage > 92) {
-        percentage = 92;
-    }
-
-    return percentage;
-}
-
+/* ERROR FUNCTION */
 
 function showError(message) {
     errorMessage.textContent = message;
 }
 
 
-function clearError() {
-    errorMessage.textContent = "";
-}
+/* THERMOMETER HEIGHT */
+
+function getPercentage(value, minimum, maximum) {
+
+    let percentage =
+        ((value - minimum) / (maximum - minimum)) * 100;
 
 
-function resetResults() {
-    celsiusResult.textContent = "--";
-    fahrenheitResult.textContent = "--";
-    kelvinResult.textContent = "--";
+    /* KEEP LIQUID VISIBLE */
 
-    celsiusMercury.style.height = "15%";
-    fahrenheitMercury.style.height = "15%";
-    kelvinMercury.style.height = "15%";
-}
-
-
-temperatureInput.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-        convertTemperature();
+    if (percentage < 3) {
+        percentage = 3;
     }
-});
+
+
+    /* PREVENT OVERFLOW */
+
+    if (percentage > 96) {
+        percentage = 96;
+    }
+
+
+    return percentage;
+}
