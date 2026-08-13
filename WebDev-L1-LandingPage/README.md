@@ -1,4 +1,4 @@
-# Task 1 · Landing Page — Flowly
+# Task 1 - Landing Page — Flowly
 
 ## Overview
 A static landing page built for **Flowly**, a fictional focus/productivity app that helps
