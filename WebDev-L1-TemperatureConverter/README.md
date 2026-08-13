@@ -1,4 +1,4 @@
-Temperature Converter
+# Task 3 · Temperature Converter
 
 ## Overview
 An interactive temperature conversion tool that converts values between Celsius, Fahrenheit,
