@@ -1,12 +1,12 @@
 :root {
-  --ink: #1B1E24;
-  --paper: #F6F7F5;
+  --ink: #1E2530;
+  --paper: #E7ECF2;
   --panel-c: #DCEFE3; --panel-c-deep: #8FCDA8;
   --panel-f: #DCEAF7; --panel-f-deep: #7FB4E0;
   --panel-k: #FBE0E0; --panel-k-deep: #E58686;
   --mercury: #E23B3B;
-  --muted: #5B616B;
-  --line: rgba(27,30,36,0.12);
+  --muted: #5C6779;
+  --line: rgba(30,37,48,0.14);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
