@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
 * {
     margin: 0;
@@ -8,303 +8,616 @@
 
 body {
     min-height: 100vh;
-    font-family: "Poppins", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 20px;
+    padding: 25px;
+    font-family: "DM Sans", sans-serif;
+    color: #eef4ff;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(136, 67, 255, 0.22), transparent 25%),
+        radial-gradient(circle at 90% 10%, rgba(0, 179, 255, 0.18), transparent 25%),
+        linear-gradient(135deg, #080c20, #101735, #071a31);
     overflow-x: hidden;
-    background: linear-gradient(135deg, #071a3d, #173f6b, #244f82, #0f766e);
-    background-size: 400% 400%;
-    animation: backgroundMove 12s ease infinite;
-    position: relative;
 }
 
-/* Moving animated background */
-@keyframes backgroundMove {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Animated glowing circles */
-body::before,
-body::after {
-    content: "";
-    position: fixed;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    filter: blur(70px);
-    opacity: 0.35;
-    z-index: -1;
-    animation: floatGlow 8s ease-in-out infinite;
-}
-
-body::before {
-    background: #38bdf8;
-    top: -100px;
-    left: -100px;
-}
-
-body::after {
-    background: #2dd4bf;
-    bottom: -100px;
-    right: -100px;
-    animation-delay: 3s;
-}
-
-@keyframes floatGlow {
-    0%, 100% {
-        transform: translate(0, 0) scale(1);
-    }
-
-    50% {
-        transform: translate(70px, 40px) scale(1.15);
-    }
-}
-
-.container {
+.app {
     width: 100%;
+    max-width: 1500px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 30px;
+    background: rgba(5, 10, 28, 0.72);
+    border: 1px solid rgba(110, 157, 255, 0.2);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+/* HEADER */
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.mini-title {
+    color: #65d7ff;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+}
+
+.header h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.header p:last-child {
+    margin-top: 8px;
+    color: #b9c5dd;
+    font-size: 17px;
+}
+
+/* MAIN DASHBOARD */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 340px 290px 1fr;
+    gap: 20px;
+}
+
+/* PANELS */
+
+.quick-reference,
+.converter-panel,
+.temperature-results {
+    border-radius: 24px;
+    border: 1px solid rgba(102, 156, 255, 0.2);
+    background: linear-gradient(
+        145deg,
+        rgba(20, 27, 57, 0.94),
+        rgba(7, 17, 39, 0.92)
+    );
+}
+
+/* QUICK REFERENCE */
+
+.quick-reference {
+    padding: 22px;
+}
+
+.quick-reference h2 {
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #d7e4ff;
+    margin-bottom: 20px;
+}
+
+.reference-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 50px 1fr auto;
+    gap: 10px;
+    align-items: center;
+    padding: 13px 10px;
+    margin-bottom: 10px;
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: 0.3s ease;
+}
+
+.reference-card:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.reference-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 23px;
+    border: 1px solid currentColor;
+}
+
+.reference-card h3 {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.reference-card p {
+    margin-top: 4px;
+    font-size: 11px;
+    color: #9cacc9;
+}
+
+.reference-card strong {
+    font-size: 14px;
+}
+
+.boiling {
+    color: #ff6868;
+}
+
+.body-temp {
+    color: #9be15d;
+}
+
+.room-temp {
+    color: #ffc850;
+}
+
+.freezing {
+    color: #62caff;
+}
+
+.absolute {
+    color: #c084fc;
+}
+
+.quote-box {
+    margin-top: 15px;
+    padding: 18px;
+    border-radius: 17px;
+    text-align: center;
+    background: rgba(129, 91, 255, 0.08);
+}
+
+.quote-box span {
+    font-size: 35px;
+    color: #a878ff;
+}
+
+.quote-box p {
+    color: #b6bfd3;
+    font-size: 13px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* CONVERTER PANEL */
+
+.converter-panel {
+    padding: 25px;
+}
+
+.thermo-hero {
     display: flex;
     justify-content: center;
+    margin-bottom: 28px;
 }
 
-.converter-card {
-    width: 100%;
-    max-width: 560px;
-    padding: 40px;
-    border-radius: 28px;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    box-shadow:
-        0 25px 60px rgba(0, 0, 0, 0.28),
-        0 0 40px rgba(56, 189, 248, 0.15);
-    animation: cardAppear 0.9s ease-out;
-    position: relative;
-    overflow: hidden;
+.hero-ring {
+    width: 145px;
+    height: 145px;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: conic-gradient(
+        #ff5f6d,
+        #c66cff,
+        #3ca8ff,
+        #42e8c2,
+        #ff5f6d
+    );
+    animation: rotateRing 8s linear infinite;
 }
 
-@keyframes cardAppear {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-
+@keyframes rotateRing {
     to {
-        opacity: 1;
-        transform: translateY(0);
+        transform: rotate(360deg);
     }
 }
 
-/* Decorative top line */
-.converter-card::before {
+.hero-ring::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 8%;
-    width: 84%;
-    height: 5px;
-    border-radius: 0 0 20px 20px;
-    background: linear-gradient(90deg, #06b6d4, #2563eb, #14b8a6);
-    background-size: 200% 100%;
-    animation: lineMove 4s linear infinite;
+    width: 131px;
+    height: 131px;
+    border-radius: 50%;
+    background: #121a39;
 }
 
-@keyframes lineMove {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    100% {
-        background-position: 200% 50%;
-    }
+.hero-thermometer {
+    position: relative;
+    z-index: 1;
+    width: 28px;
+    height: 85px;
 }
 
-h1 {
-    text-align: center;
-    font-size: 34px;
-    font-weight: 800;
-    color: #102a43;
-    margin-bottom: 8px;
-    letter-spacing: 0.3px;
+.hero-thermometer::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    width: 14px;
+    height: 67px;
+    border-radius: 10px;
+    background: #e6edff;
+    border: 3px solid #263252;
 }
 
-.subtitle {
-    text-align: center;
-    color: #52677d;
-    font-size: 15px;
-    margin-bottom: 32px;
+.hero-mercury {
+    position: absolute;
+    z-index: 2;
+    bottom: 12px;
+    left: 11px;
+    width: 6px;
+    height: 42px;
+    border-radius: 10px;
+    background: linear-gradient(#ff6464, #ff2525);
+}
+
+.hero-bulb {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 3px;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #ff8b8b, #ff2020);
+    border: 3px solid #ffffff;
 }
 
 .input-group {
-    margin-bottom: 22px;
+    margin-bottom: 18px;
 }
 
-label {
+.input-group label {
     display: block;
-    font-weight: 600;
-    margin-bottom: 9px;
-    color: #183b56;
-    font-size: 15px;
+    margin-bottom: 8px;
+    color: #d8e1f5;
+    font-size: 14px;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper span {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #cbd8f3;
 }
 
 input,
 select {
     width: 100%;
-    padding: 15px 17px;
-    border: 1.5px solid #d5e1ea;
-    border-radius: 14px;
-    background: #f8fbfd;
-    color: #102a43;
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
+    height: 60px;
+    padding: 0 17px;
+    border-radius: 15px;
     outline: none;
-    transition: all 0.3s ease;
+    font-family: inherit;
+    font-size: 17px;
+    color: #ffffff;
+    background: rgba(8, 16, 39, 0.9);
+    border: 1px solid #31518e;
+    transition: 0.3s ease;
 }
 
-input:hover,
-select:hover {
-    border-color: #7dd3fc;
+input {
+    padding-right: 55px;
 }
 
 input:focus,
 select:focus {
-    border-color: #0891b2;
-    background: #ffffff;
-    box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.12);
-    transform: translateY(-1px);
+    border-color: #50cfff;
+    box-shadow: 0 0 0 4px rgba(80, 207, 255, 0.1);
+}
+
+select option {
+    background: #101a38;
 }
 
 button {
     width: 100%;
-    padding: 16px;
+    height: 58px;
     border: none;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #0891b2, #2563eb);
-    background-size: 200% 200%;
+    border-radius: 16px;
+    margin-top: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     color: white;
-    font-family: "Poppins", sans-serif;
-    font-size: 17px;
+    font-family: inherit;
+    font-size: 16px;
     font-weight: 700;
+    letter-spacing: 1px;
     cursor: pointer;
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.28);
-    transition: all 0.3s ease;
-    animation: buttonGlow 3s ease infinite;
-}
-
-@keyframes buttonGlow {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
+    background: linear-gradient(90deg, #f05172, #9d55e8, #159de3);
+    background-size: 200% 100%;
+    box-shadow: 0 12px 30px rgba(77, 113, 255, 0.25);
+    transition: 0.3s ease;
 }
 
 button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
+    background-position: 100% 0;
 }
 
-button:active {
-    transform: translateY(0);
-}
-
-.result-box {
-    margin-top: 30px;
-    padding: 22px;
-    border-radius: 20px;
-    background: linear-gradient(
-        135deg,
-        rgba(240, 249, 255, 0.95),
-        rgba(236, 253, 245, 0.95)
-    );
-    border: 1px solid rgba(14, 165, 233, 0.15);
-}
-
-.result-box h2 {
-    text-align: center;
-    font-size: 21px;
-    color: #183b56;
-    margin-bottom: 16px;
-}
-
-.result-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 14px;
-    margin-bottom: 10px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.75);
-    transition: all 0.3s ease;
-}
-
-.result-item:last-child {
-    margin-bottom: 0;
-}
-
-.result-item:hover {
-    transform: translateX(5px);
-    background: #ffffff;
-    box-shadow: 0 7px 20px rgba(15, 118, 110, 0.08);
-}
-
-.result-item span {
-    color: #334e68;
-    font-weight: 500;
-}
-
-.result-item strong {
-    color: #0969da;
-    font-size: 17px;
-    font-weight: 700;
+.arrow {
+    font-size: 25px;
 }
 
 .error-message {
-    min-height: 20px;
-    margin-top: 7px;
-    color: #dc2626;
-    font-size: 13px;
-    font-weight: 500;
+    min-height: 18px;
+    padding-top: 6px;
+    color: #ff7373;
+    font-size: 12px;
 }
 
-/* Mobile responsive */
+.info-note {
+    margin-top: 18px;
+    padding: 13px;
+    border-radius: 13px;
+    color: #b8c7e7;
+    background: rgba(79, 123, 210, 0.08);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* RESULTS */
+
+.temperature-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 18px;
+    gap: 15px;
+}
+
+.temperature-column {
+    min-width: 0;
+    padding: 15px 10px;
+    text-align: center;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.unit-heading h2 {
+    font-size: 36px;
+}
+
+.unit-heading p {
+    margin-top: 5px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.celsius-column .unit-heading {
+    color: #ff7373;
+}
+
+.fahrenheit-column .unit-heading {
+    color: #56b7ff;
+}
+
+.kelvin-column .unit-heading {
+    color: #ffbf42;
+}
+
+.thermometer-area {
+    position: relative;
+    height: 440px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.scale {
+    position: absolute;
+    left: 8px;
+    top: 10px;
+    bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #c4d0e9;
+    font-size: 12px;
+    text-align: right;
+}
+
+.thermometer {
+    position: relative;
+    width: 38px;
+    height: 350px;
+    margin-left: 45px;
+    padding: 5px;
+    border-radius: 25px;
+    border: 2px solid #a7b8dc;
+    background: linear-gradient(90deg, #45506d, #e8efff, #59637d);
+}
+
+.mercury {
+    position: absolute;
+    left: 8px;
+    bottom: 22px;
+    width: 18px;
+    height: 50%;
+    border-radius: 15px;
+    transition: height 0.8s ease;
+}
+
+.celsius-thermometer .mercury {
+    background: linear-gradient(#ff5f6d, #ff2020);
+}
+
+.fahrenheit-thermometer .mercury {
+    background: linear-gradient(#5ed1ff, #087cff);
+}
+
+.kelvin-thermometer .mercury {
+    background: linear-gradient(#ffe063, #ff9d00);
+}
+
+.bulb {
+    position: absolute;
+    left: -6px;
+    bottom: -12px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+}
+
+.celsius-thermometer .bulb {
+    background: radial-gradient(circle at 35% 30%, #ff8d8d, #ff2020);
+    box-shadow: 0 0 20px rgba(255, 48, 48, 0.5);
+}
+
+.fahrenheit-thermometer .bulb {
+    background: radial-gradient(circle at 35% 30%, #86e5ff, #087cff);
+    box-shadow: 0 0 20px rgba(8, 124, 255, 0.5);
+}
+
+.kelvin-thermometer .bulb {
+    background: radial-gradient(circle at 35% 30%, #ffe881, #ff9d00);
+    box-shadow: 0 0 20px rgba(255, 157, 0, 0.5);
+}
+
+.value-card {
+    min-height: 76px;
+    padding: 13px 8px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.value-card strong {
+    display: block;
+    font-size: 24px;
+}
+
+.value-card span {
+    display: block;
+    margin-top: 3px;
+    font-size: 14px;
+}
+
+.celsius-column .value-card {
+    color: #ff7474;
+}
+
+.fahrenheit-column .value-card {
+    color: #56b7ff;
+}
+
+.kelvin-column .value-card {
+    color: #ffc342;
+}
+
+/* FORMULAS */
+
+.formula-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+    padding: 18px 25px;
+    border-radius: 18px;
+    color: #b9c6df;
+    background: rgba(15, 25, 55, 0.9);
+    border: 1px solid rgba(99, 148, 255, 0.18);
+    font-size: 13px;
+}
+
+.formula-title {
+    color: #e2d3ff;
+    font-weight: 700;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1150px) {
+    .dashboard {
+        grid-template-columns: 300px 280px 1fr;
+    }
+
+    .temperature-results {
+        grid-template-columns: 1fr;
+    }
+
+    .thermometer-area {
+        height: 330px;
+    }
+
+    .thermometer {
+        height: 250px;
+    }
+}
+
+@media (max-width: 850px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .temperature-results {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .quick-reference {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .quick-reference h2,
+    .quote-box {
+        grid-column: 1 / -1;
+    }
+
+    .reference-card {
+        margin-bottom: 0;
+    }
+}
+
 @media (max-width: 600px) {
     body {
-        padding: 20px 14px;
+        padding: 10px;
     }
 
-    .converter-card {
-        padding: 30px 20px;
-        border-radius: 22px;
+    .app {
+        padding: 15px;
+        border-radius: 20px;
     }
 
-    h1 {
-        font-size: 27px;
+    .header h1 {
+        font-size: 31px;
     }
 
-    .subtitle {
-        font-size: 13px;
+    .header p:last-child {
+        font-size: 14px;
     }
 
-    .result-item {
-        padding: 13px 10px;
+    .quick-reference,
+    .temperature-results {
+        grid-template-columns: 1fr;
     }
 
-    .result-item strong {
-        font-size: 15px;
+    .converter-panel {
+        padding: 20px;
+    }
+
+    .temperature-results {
+        display: block;
+    }
+
+    .temperature-column {
+        margin-bottom: 15px;
+    }
+
+    .temperature-column:last-child {
+        margin-bottom: 0;
+    }
+
+    .thermometer-area {
+        height: 300px;
     }
 }
