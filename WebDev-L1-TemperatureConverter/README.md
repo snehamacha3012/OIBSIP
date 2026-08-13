@@ -1,53 +1,37 @@
-# Temperature Converter Website
+# Task 3 · Temperature Converter
 
-This is a Temperature Converter Website developed as Task 3 of the Web Development & Designing Internship at Oasis Infobyte.
+## Overview
+An interactive temperature conversion tool that converts values between Celsius, Fahrenheit,
+and Kelvin in real time, with input validation and visual thermometer displays for each scale.
+This project was built for **Level 1 – Task 3** of the Web Development & Design track under
+the AICTE Oasis Infobyte Internship Program.
 
-## Features
+## Objective
+Build an interactive web tool that converts temperature values between Celsius, Fahrenheit,
+and Kelvin, with real-time input validation.
 
-- Convert temperature between Celsius, Fahrenheit, and Kelvin
-- Input unit selection using a dropdown menu
-- Displays results in all three temperature units
-- Numeric input validation
-- Error message for empty or invalid input
-- Absolute zero validation
-- Clean and centered user interface
-- Responsive design for different screen sizes
-
-## Technologies Used
-
+## Tech Stack
 - HTML5
 - CSS3
-- Vanilla JavaScript
+- JavaScript (Vanilla)
 
-## How It Works
+## Features
+- Numeric input field with validation — rejects non-numeric input with a clear error message
+- Dropdown unit selector to choose the input unit (Celsius / Fahrenheit / Kelvin)
+- All three converted values shown simultaneously after conversion
+- Convert button that triggers the calculation
+- Result display area with correctly labeled units
+- Absolute zero edge case handling — shows a friendly error message for values below −273.15°C
+- Visual thermometer displays with a mercury fill that reflects each converted value
+- Clean, centred UI layout with clear labels
+- Fully responsive layout
 
-1. Enter a temperature value.
-2. Select the input unit: Celsius, Fahrenheit, or Kelvin.
-3. Click the **Convert Temperature** button.
-4. The converted values are displayed in Celsius, Fahrenheit, and Kelvin.
+## File Structure
+WebDev-L1-TemperatureConverter/ contains index.html, style.css, script.js, and README.md
 
-## Project Structure
-
-WebDev-L1-TemperatureConverter/
-
-- index.html
-- style.css
-- script.js
-- README.md
-
-## Validation
-
-The application prevents invalid temperatures below absolute zero:
-
-- Celsius: below -273.15°C
-- Fahrenheit: below -459.67°F
-- Kelvin: below 0 K
+## How to View
+1. Clone this repository or download the three files (index.html, style.css, script.js) into the same folder.
+2. Open index.html in any modern web browser.
 
 ## Author
-
-Macha Sneha
-
-## Internship
-
-Web Development & Designing Internship  
-Oasis Infobyte
+Macha Sneha — AICTE Oasis Infobyte Internship, Web Development & Design track
